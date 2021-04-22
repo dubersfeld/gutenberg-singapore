@@ -1,0 +1,6 @@
+#!/bin/bash
+
+kubectl config set-context $(kubectl config current-context) --namespace=singapore
+
+kubectl create configmap mongo-initdb --from-file=gutenberg.js
+

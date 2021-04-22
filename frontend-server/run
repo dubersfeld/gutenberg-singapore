@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export SPRING_PROFILES_ACTIVE=local
+
+mvn -e -X spring-boot:run

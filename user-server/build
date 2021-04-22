@@ -1,0 +1,7 @@
+#!/bin/bash
+
+eval $(minikube -p debug2 docker-env)
+
+mvn clean spring-boot:build-image 
+
+docker tag user-server:0.0.1-SNAPSHOT gutenberg/user-server

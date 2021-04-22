@@ -1,0 +1,10 @@
+spring:
+  config:
+    activate:
+      on-profile:
+      - dev
+  data:
+    mongodb:
+      uri: mongodb://spring:passwoord1234@mongodb:27017/booksonline?authSource=admin    
+      
+sator: SATORcentral      

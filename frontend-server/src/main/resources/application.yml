@@ -1,0 +1,20 @@
+server:
+  port: 80
+   
+spring:
+  application:
+    name: frontend-service
+  config:
+    activate:
+      on-profile:
+      - test
+      
+
+# base server URLs 
+#baseBooksUrl: http://gateway-service:5555/books
+gutenberg:
+  baseBooksUrl: http://localhost:5555/books
+  baseReviewsUrl: http://localhost:5555/reviews
+  baseOrdersUrl: http://localhost:5555/orders
+  baseUsersUrl: http://localhost:5555/users       
+      

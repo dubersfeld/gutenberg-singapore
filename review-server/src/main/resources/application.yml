@@ -1,0 +1,38 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: review-service
+        
+#sator: TENETdefault 
+                  
+---
+# test profile only
+spring:
+  config:
+    activate:
+      on-profile:
+      - test
+      
+  data:   
+    mongodb:
+      uri: mongodb://spring:passwoord1234@localhost:27017/booksonline?authSource=admin
+      auto-index-creation: true
+      
+enclume: ENCLUMEtest
+sator: SATORtest
+arepo: AREPOtest
+
+baseReviewsUrl: http://localhost:8082
+#management.endpoint.health.show-details: "ALWAYS"
+              
+server:
+  port: 80
+
+logging:
+  level:
+    root: INFO
+    com.dub.spring: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    

@@ -1,0 +1,18 @@
+spring:
+  config: 
+    activate:
+      on-profile:
+        dev
+  #data:
+  #  mongodb:
+  #    uri: mongodb://spring:passwoord1234@mongodb:27017/booksonline?authSource=admin
+  
+
+server:
+  port: 80
+  servlet:
+    context-path:
+    
+         
+#baseUsersUrl: http://localhost:80 
+baseUsersUrl: ${BASE_USERS_URL}

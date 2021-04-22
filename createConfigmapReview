@@ -1,0 +1,7 @@
+#!/bin/bash
+
+kubectl config set-context $(kubectl config current-context) --namespace=singapore
+
+kubectl create configmap config-repo-review-service --from-file=config-repo/application.yml --from-file=config-repo/review-service.yml --save-config
+
+

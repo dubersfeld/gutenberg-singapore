@@ -1,0 +1,36 @@
+server:
+  port: 80
+  servlet:
+    context-path:
+    
+---
+# test profile only
+spring:
+  config:
+    activate:
+      on-profile:
+      - test
+  data:
+    mongodb:
+      #uri: mongodb://spring:password1234@localhost:27017/booksonline
+      uri: mongodb://spring:passwoord1234@localhost:27017/booksonline?authSource=admin
+      auto-index-creation: true
+      
+enclume: ENCLUMEtest
+sator: SATORtest
+arepo: AREPOtest
+#management.endpoint.health.show-details: "ALWAYS"
+              
+server:
+  port: 80
+
+logging:
+  level:
+    root: INFO
+    com.dub.spring: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    
+        
+baseBooksUrl: http://localhost:8081       
+baseReviewsUrl: http://localhost:8082    
+baseUsersUrl: http://localhost:80        

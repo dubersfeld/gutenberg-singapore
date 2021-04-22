@@ -1,0 +1,7 @@
+#!/bin/bash
+
+eval $(minikube -p singapore docker-env)
+
+mvn clean spring-boot:build-image 
+
+docker tag order-server:0.0.1-SNAPSHOT gutenberg/order-server

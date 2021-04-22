@@ -1,0 +1,20 @@
+spring:
+  config: 
+    activate:
+      on-profile:
+        dev
+
+server:
+  port: 80
+  servlet:
+    context-path: /
+             
+# base server URLs 
+#baseBooksUrl: http://gateway-service:5555/books
+gutenberg:
+  baseBooksUrl: ${BASE_BOOKS_URL}
+  baseReviewsUrl: ${BASE_REVIEWS-URL}
+  baseOrdersUrl: ${BASE_ORDERS_URL}
+  baseUsersUrl: ${BASE_USERS_URL}
+
+
