@@ -1,0 +1,2 @@
+# gutenberg-singapore
+I present here a microservice-oriented application that uses some basic Kubernetes features including Ingress. It consists of a collection of separate servers all running in Kubernetes pods. MongoDB is used as a NoSQL database and also runs in a pod. Moreover all backend servers use reactive connection to MongoDB and Spring WebFlux rather than Spring RESTful. All backend servers are tested using JUnit5 test classes.
