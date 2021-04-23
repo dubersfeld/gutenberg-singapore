@@ -1,0 +1,13 @@
+#!/bin/bash
+
+unset KUBECONFIG
+
+minikube start -p singapore \
+--memory=10240 \
+--cpus=4 \
+--disk-size=30g \
+--kubernetes-version=v1.20.2 \
+--vm-driver=virtualbox
+
+minikube addons enable ingress -p singapore
+minikube addons enable metrics-server -p singapore

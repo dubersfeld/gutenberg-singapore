@@ -1,0 +1,8 @@
+#!/bin/bash
+
+kubectl port-forward svc/mongodb 27017:27017 & 
+#disown
+
+
+
+

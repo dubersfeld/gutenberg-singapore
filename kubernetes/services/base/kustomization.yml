@@ -1,0 +1,10 @@
+resources:
+- book.yml
+- review.yml
+- order.yml
+- user.yml
+- frontend.yml
+#- grunge-ingress5.yml
+- frontend-ingress.yml
+#- zipkin-server.yml
+#- grunge.yml

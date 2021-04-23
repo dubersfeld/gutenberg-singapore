@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1$2$3
+spec:
+  #tls:
+  #- hosts:
+  #  - minikube.singapore
+  #  secretName: tls-certificate
+  rules:
+    - host: minikube.singapore
+      http:
+        paths:
+          - path: /(index|backHome|login|logout|getProfile|categories|books|getCart|addToCart|editCart|payment|authorizePayment|search|sortBy|createReview|addAddress|deleteAddress|addPaymentMethod|deletePaymentMethod|)(/.*|)(\?.*|)
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
+          - path: /(actuator/health)
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80        

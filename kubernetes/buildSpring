@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# should be in kubernetes folder
+
+for server in 'book-server' 'review-server' 'order-server' 'user-server' 'frontend-server';
+do
+  # kill port-forward if running
+  toto=`ps aux | grep 27017`
+  a=($toto)
+  echo ${a[1]} 
+  kill -9 ${a[1]}
+
+  # kill and restart pod, wait for pod OK
+  kubectl delete po --all
+  kubectl wait --timeout=600s --for=condition=ready pod --all
+
+  # restart port-forward
+  ./portForward &
+
+  cd ../$server
+  pwd
+  ./buildSingapore
+
+  cd ../kubernetes
+done;

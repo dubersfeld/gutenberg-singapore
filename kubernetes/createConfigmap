@@ -1,0 +1,4 @@
+#!/bin/bash
+
+kubectl create configmap mongo-initdb --from-file=grunge2.sh
+
